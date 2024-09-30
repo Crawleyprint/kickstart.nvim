@@ -356,7 +356,6 @@ require('lazy').setup({
       },
     },
   },
-
   -- NOTE: Plugins can specify dependencies.
   --
   -- The dependencies are proper plugin specifications as well - anything
@@ -387,18 +386,6 @@ require('lazy').setup({
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-    },
-    {
-      'pmizio/typescript-tools.nvim',
-      dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-      opts = {
-        settings = {
-          jsx_close_tag = {
-            enable = true,
-            filetypes = { 'javascriptreact', 'typescriptreact' },
-          },
-        },
-      },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -708,6 +695,20 @@ require('lazy').setup({
       }
     end,
   },
+  {
+    'styled-components/vim-styled-components',
+    branch = 'main',
+    ft = { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
+  },
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {
+      settings = {
+        tsserver_plugins = { 'typescript-styled-plugin' },
+      },
+    },
+  },
 
   { -- Autoformat
     'stevearc/conform.nvim',
@@ -946,7 +947,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'css', 'json' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
