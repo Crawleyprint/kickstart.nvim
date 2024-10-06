@@ -11,6 +11,12 @@ local options = {
   -- Enable break indent
   breakindent = true,
 
+  -- Use 2 spaces for indentation
+  expandtab = true, -- Convert tabs to spaces
+  shiftwidth = 2, -- Number of spaces to use for each step of (auto)indent
+  tabstop = 2, -- Number of spaces that a <Tab> in the file counts for
+  softtabstop = 2, -- Number of spaces a <Tab> counts for while performing editing operations
+
   -- Save undo history
   undofile = true,
 

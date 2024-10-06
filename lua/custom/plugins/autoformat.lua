@@ -1,4 +1,5 @@
-return { -- Autoformat
+-- Autoformat
+return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' },
   cmd = { 'ConformInfo' },
@@ -36,7 +37,11 @@ return { -- Autoformat
       -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      json = { 'prettier_d_slim', 'prettier', stop_after_first = true },
+      typescript = { 'eslint', stop_after_first = true },
+      javascript = { 'eslint', stop_after_first = true },
+      javascriptreact = { 'eslint', stop_after_first = true },
+      typescriptreact = { 'eslint', stop_after_first = true },
     },
   },
 }
